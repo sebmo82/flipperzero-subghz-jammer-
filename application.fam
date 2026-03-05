@@ -1,0 +1,8 @@
+App(
+    appid="subghz_ext_jammer",
+    name="SubGHz Ext Jammer",
+    apptype=FlipperAppType.EXTERNAL,
+    entry_point="subghz_jammer_app",
+    stack_size=2 * 1024,
+    fap_category="Sub-GHz",
+)
