@@ -1,0 +1,21 @@
+name: "Build Flipper App"
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install uFBT
+        run: python3 -m pip install ufbt
+
+      - name: Build FAP
+        run: ufbt
+
+      - name: Upload FAP
+        uses: actions/upload-artifact@v4
+        with:
+          name: MonJammerFAP
+          path: "**/*.fap"
